@@ -43,11 +43,7 @@ const game = () => {
     ).toUpperCase();
 
     // Check the user enters a valid input
-    if (
-      userInput.trim() !== ROCK &&
-      userInput.trim() !== PAPER &&
-      userInput.trim() !== SCISSORS
-    ) {
+    if (userInput !== ROCK && userInput !== PAPER && userInput !== SCISSORS) {
       console.log(
         `${userInput} is INVALID INPUT! Enter eather ${ROCK}, ${PAPER} or ${SCISSORS}`
       );
