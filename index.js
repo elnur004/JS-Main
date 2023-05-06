@@ -44,7 +44,7 @@ const game = () => {
 
     // Check the user enters a valid input
     if (userInput !== ROCK && userInput !== PAPER && userInput !== SCISSORS) {
-      console.log(
+      alert(
         `${userInput} is INVALID INPUT! Enter eather ${ROCK}, ${PAPER} or ${SCISSORS}`
       );
       return;
