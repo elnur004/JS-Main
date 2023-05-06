@@ -47,7 +47,6 @@ const game = () => {
       alert(
         `${userInput} is INVALID INPUT! Enter eather ${ROCK}, ${PAPER} or ${SCISSORS}`
       );
-      return;
     }
 
     // Generate computer choise value via computerPlay() function
