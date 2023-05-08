@@ -28,7 +28,7 @@ const userPlay = () => {
     alert(
       `${
         userInput === '' ? 'Empty value' : userInput
-      } is INVALID CHOICE! ${DEFAULT_CHOICE} has been choicen for you!`
+      } is INVALID CHOICE!💥 ${DEFAULT_CHOICE} has been choicen for you!`
     );
     return DEFAULT_CHOICE;
   }
@@ -50,6 +50,7 @@ const playRound = (playerSelection, computerSelection) => {
   }
 };
 
+// Message for console info
 const message = (gameRound, userSelection, computerSelection) => {
   // Show round and players choice
   console.log(`Round: ${gameRound}`);
@@ -59,6 +60,7 @@ const message = (gameRound, userSelection, computerSelection) => {
   console.log('----------------------');
 };
 
+// Determin the game winner
 const winnerGame = (playerScore, computerScore) => {
   // Compare the scores and determin winner of the game
   if (playerScore > computerScore) {
@@ -77,6 +79,10 @@ const winnerGame = (playerScore, computerScore) => {
 };
 
 const game = () => {
+  alert(
+    `This is traditional ${ROCK} ✊🏻, ${PAPER} 🖐🏻 and ${SCISSORS} ✌🏻 game. \nFor starting the game press OK button and ENJOY!😉`
+  );
+
   let userScore = 0;
   let compScore = 0;
 
@@ -85,6 +91,7 @@ const game = () => {
     // Generate computer choise value via computerPlay() function
     const computerChoise = computerPlay();
 
+    // Generate user choise value via userPlay() function
     const userChoice = userPlay();
 
     // Call playRound() function and pass proper arguments for a single round
@@ -104,9 +111,10 @@ const game = () => {
     ) {
       compScore++;
     }
-
+    // Print the messages on console
     message(round, userChoice, computerChoise);
   }
+  // Print the winner on console
   winnerGame(userScore, compScore);
 };
 game();
