@@ -19,16 +19,23 @@ const computerPlay = () => {
 
 const userPlay = () => {
   // Choise the value via prompt window
-  const userInput = prompt(`Enter either ${ROCK}, ${PAPER} or ${SCISSORS}`)
-    .trim()
-    .toUpperCase();
+  let userInput = prompt(`Enter either ${ROCK}, ${PAPER} or ${SCISSORS}`);
+
+  // If value is null terminate the game
+  if (!userInput) {
+    alert('Game has terminated. Good Bye! 👋');
+    return;
+  }
+
+  userInput = userInput.trim().toUpperCase();
 
   // Check the user enters a valid input
   if (userInput !== ROCK && userInput !== PAPER && userInput !== SCISSORS) {
+    // If value is invalid choose the default one
     alert(
       `${
         userInput === '' ? 'Empty value' : userInput
-      } is INVALID CHOICE!💥 ${DEFAULT_CHOICE} has been choicen for you!`
+      } is INVALID CHOICE!💥 ${DEFAULT_CHOICE} has been chosen for you!`
     );
     return DEFAULT_CHOICE;
   }
@@ -93,6 +100,11 @@ const game = () => {
 
     // Generate user choise value via userPlay() function
     const userChoice = userPlay();
+
+    // If value is null terminate the game
+    if (!userChoice) {
+      return;
+    }
 
     // Call playRound() function and pass proper arguments for a single round
     const singleRound = playRound(userChoice, computerChoise);
