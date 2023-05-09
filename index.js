@@ -19,7 +19,10 @@ const computerPlay = () => {
 
 const userPlay = () => {
   // Choise the value via prompt window
-  let userInput = prompt(`Enter either ${ROCK}, ${PAPER} or ${SCISSORS}`, ' ');
+  let userInput = prompt(
+    `Enter either ${ROCK}, ${PAPER} or ${SCISSORS}.\nIf you want to "EXIT" the game press "CANCEL".`,
+    ' '
+  );
 
   // If value is null terminate the game
 
@@ -88,7 +91,7 @@ const winnerGame = (playerScore, computerScore) => {
 
 const game = () => {
   alert(
-    `This is traditional ${ROCK} ✊🏻, ${PAPER} 🖐🏻 and ${SCISSORS} ✌🏻 game. \nFor starting the game press OK button.\nIf you want to "EXIT" the game press "CANCEL".\nENJOY!😉`
+    `This is traditional ${ROCK} ✊🏻, ${PAPER} 🖐🏻 and ${SCISSORS} ✌🏻 game. \nFor starting the game press OK button.\nENJOY!😉`
   );
 
   let userScore = 0;
